@@ -1,0 +1,33 @@
+type Person {
+  id: Int!
+  name: String!
+  age: Int!
+  gender: String!
+}
+
+type Movie {
+  id: Int!
+  title: String!
+}
+
+type YtsMovie {
+  id: Int!
+  title: String!
+  rating: Float!
+  summary: String!
+  language: String!
+  medium_cover_image: String!
+}
+
+type Query {
+  people: [Person]!
+  person(id: Int!): Person
+  movies: [Movie]!
+  movie(id: Int!): Movie
+  ytsMovie: [YtsMovie]
+}
+
+type Mutation {
+  addMovie(title: String!): String!
+  deleteMovieById(id: Int!): String!
+}
